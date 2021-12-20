@@ -1,38 +1,39 @@
-.App {
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #4cb889;
+}
+
+#drum-machine {
+  width: 90%;
+  height: 90vh;
+  border: 3px solid black;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #51c593, #44a67b);
+  box-shadow: 20px 20px 60px #419c74, -20px -20px 60px #57d49e;
+  margin: 10% auto;
+}
+
+.banks-container {
+  width: 100%;
+  height: 90%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  padding: 1rem;
+}
+
+.drum-pad {
+  border-radius: 20px;
+  background: #4cb889;
+  box-shadow: 20px 20px 60px #419c74, -20px -20px 60px #57d49e;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  flex-direction: column;
 }
