@@ -2,11 +2,13 @@ import React from "react";
 import Display from "./Display";
 import Drumpad from "./Drumpad";
 import { bankOne, bankTwo } from "../utils/banks.js";
+import { useSelector } from "react-redux";
 
 const DrumMachine = () => {
+  const display = useSelector((state) => state.display);
   return (
     <div id="drum-machine">
-      <Display />
+      <Display display={display} />
       <div className="banks-container">
         {bankOne.map((bank) => {
           return (

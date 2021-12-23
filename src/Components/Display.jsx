@@ -1,7 +1,7 @@
 import React from "react";
 
-const Display = () => {
-  return <div>Display</div>;
+const Display = ({ display }) => {
+  return <div className="display">{display}</div>;
 };
 
 export default Display;

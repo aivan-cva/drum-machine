@@ -1,16 +1,40 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const Drumpad = ({ keyCode, keyTrigger, id, url }) => {
-  const playPad = () => {
-    const sound = document.getElementById(id);
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
+  const dispatch = useDispatch();
+
+  const playPad = (padId) => {
+    dispatch({ type: "DISPLAY_CHANGE", payload: padId });
+
+    const sound = document.getElementById(padId);
+    sound.currentTime = 0;
     sound.play();
   };
 
+  const handleKeyPress = (e) => {
+    if (e.keyCode === keyCode) {
+      dispatch({ type: "DISPLAY_CHANGE", payload: id });
+      const sound = document.getElementById(id);
+      sound.currentTime = 0;
+      sound.play();
+    }
+  };
+
   return (
-    <div className="drum-pad" onClick={playPad}>
+    <button className="drum-pad" onClick={() => playPad(id)}>
       <p>{keyTrigger}</p>
+      <p>{id}</p>
       <audio className="clip" id={id} src={url}></audio>
-    </div>
+    </button>
   );
 };
 
