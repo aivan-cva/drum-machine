@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 const initialState = {
-  display: "DISPLAY",
+  display: "",
 };
 
 const reducer = (state = initialState, action) => {

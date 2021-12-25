@@ -38,7 +38,7 @@ export const bankOne = [
   {
     keyCode: 90,
     keyTrigger: "Z",
-    id: "Kick-n'-Hat",
+    id: "Kick-n-Hat",
     url: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3",
   },
   {

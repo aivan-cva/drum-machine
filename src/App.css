@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
   background-color: #4cb889;
+  color: white;
 }
 
 #drum-machine {
@@ -13,21 +17,24 @@ body {
   border-radius: 20px;
   background: #4cb889;
   margin: 10% auto;
+  display: flex;
+  justify-content: center;
 }
 
 .banks-container {
-  width: 100%;
-  height: 90%;
+  width: 700px;
   display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(3, auto);
   padding: 1rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .drum-pad {
-  width: 300px;
-  border-radius: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   background: #4cb889;
   box-shadow: 20px 20px 60px #419c74, -20px -20px 60px #57d49e;
   border: none;
@@ -37,10 +44,22 @@ body {
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  font-size: 2rem;
+  color: whitesmoke;
 }
 
 .drum-pad:active {
-  border-radius: 50px;
   background: linear-gradient(145deg, #44a67b, #51c593);
   box-shadow: 20px 20px 60px #419c74, -20px -20px 60px #57d49e;
+}
+
+.display {
+  font-size: 3rem;
+  border-radius: 20px;
+  background: #4cb889;
+  box-shadow: inset 20px 20px 60px #419c74, inset -20px -20px 60px #51c794;
+  width: 500px;
+  height: 90px;
+  padding: 1.1rem;
+  text-align: center;
 }
